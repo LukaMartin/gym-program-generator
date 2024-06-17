@@ -11,7 +11,7 @@ export default function ExerciseInstrctionsForm({
   return (
     <form onSubmit={handleSubmit} className="flex flex-col">
       <input
-        className="rounded-lg outline-none ring-light-red focus:ring-2 text-black mt-2 mb-4 px-1 md:px-2 md:py-[0.125rem]"
+        className="rounded-lg outline-none ring-light-red focus:ring-2 text-black mt-2 mb-4 px-1 md:px-2 py-1"
         type="text"
         placeholder="Exercise name..."
         name="search-text"
