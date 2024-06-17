@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { TExerciseInstructions } from "../lib/types";
 
 export default function useGetExerciseInstructions(searchText: string) {
-  const itemsFromLocalStorage = JSON.parse(localStorage.getItem("exercise_instructions") || "null")
-  const [exerciseInstructions, setExerciseInstructions] = useState<TExerciseInstructions[] | null>(itemsFromLocalStorage || null);
+  const [exerciseInstructions, setExerciseInstructions] = useState<TExerciseInstructions[] | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   
   const getTrainingProgram = async () => {
@@ -29,10 +28,6 @@ export default function useGetExerciseInstructions(searchText: string) {
     setExerciseInstructions(jsonData.instructions);
     setIsLoading(false);
   };
-
-  useEffect(() => {
-    localStorage.setItem("exercise_instructions", JSON.stringify(exerciseInstructions))
-  }, [exerciseInstructions])
 
   return { exerciseInstructions, setExerciseInstructions, isLoading, getTrainingProgram };
 }

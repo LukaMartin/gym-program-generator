@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { TTrainingProgram } from "../lib/types";
 
 export default function useGetTrainingProgram(
   trainingDays: string,
   trainingGoal: string
 ) {
-  const itemsFromLocalStorage = JSON.parse(localStorage.getItem("training-program") || "null")
-  const [trainingProgram, setTrainingProgram] = useState<TTrainingProgram[] | null>(itemsFromLocalStorage || null);
+  const [trainingProgram, setTrainingProgram] = useState<TTrainingProgram[] | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const getTrainingProgram = async () => {
@@ -33,10 +32,6 @@ export default function useGetTrainingProgram(
     setTrainingProgram(jsonData.training_program);
     setIsLoading(false);
   };
-
-  useEffect(() => {
-    localStorage.setItem("training-program", JSON.stringify(trainingProgram))
-  }, [trainingProgram])
 
   return { trainingProgram, setTrainingProgram, isLoading, getTrainingProgram };
 }
