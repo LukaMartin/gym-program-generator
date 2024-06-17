@@ -1,6 +1,8 @@
+import clsx from "clsx";
 import { ExerciseInstructionsFormProps } from "../lib/types";
 
 export default function ExerciseInstrctionsForm({
+  isLoading,
   searchText,
   setSearchText,
   handleSubmit,
@@ -19,7 +21,13 @@ export default function ExerciseInstrctionsForm({
       />
       <button
         type="submit"
-        className="md:text-xl mt-2 p-1 border-2 border-white rounded-lg hover:bg-blue"
+        className={clsx(
+          "md:text-xl mt-2 p-1 border-2 border-white rounded-lg hover:bg-blue",
+          {
+            "bg-blue": isLoading,
+            "bg-navy": !isLoading,
+          }
+        )}
       >
         Submit
       </button>

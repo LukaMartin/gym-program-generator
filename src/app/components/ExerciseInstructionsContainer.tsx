@@ -24,6 +24,7 @@ export default function ExerciseInstructionsContainer() {
   return (
     <>
       <ExerciseInstrctionsForm
+        isLoading={isLoading}
         searchText={searchText}
         setSearchText={setSearchText}
         handleSubmit={handleSubmit}
