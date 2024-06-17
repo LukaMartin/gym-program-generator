@@ -42,7 +42,7 @@ export default function TrainingProgramForm({
         <option value="muscle growth">Muscle Growth</option>
         <option value="increase strength">Increase Strength</option>
         <option value="HIIT">Cardiovascular Fitness</option>
-        <option value="flexibility">Flexibility</option>
+        <option value="improved flexibility">Improved Flexibility</option>
         <option value="calisthenics training">Calisthenics Training</option>
       </select>
       <button

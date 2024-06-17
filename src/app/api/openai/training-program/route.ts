@@ -5,6 +5,8 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
+export const runtime = "edge";
+
 export async function POST(res: Request) {
   const { trainingDays, trainingGoal } = await res.json();
 
@@ -12,7 +14,7 @@ export async function POST(res: Request) {
     messages: [
       {
         role: "user",
-        content: `Provide valid JSON output. I would please like some help making a gym program. I would like to go to the gym ${trainingDays} days a week. My goal is ${trainingGoal} Please use the following structure for the data.`
+        content: `Provide valid JSON output. I would please like some help making a gym program. I would like to go to the gym ${trainingDays} days a week. My goal is ${trainingGoal}. Please use the following structure for the data.`
       },
       {
         role: "user",
