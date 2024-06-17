@@ -12,7 +12,8 @@ I have utilised the ChatGPT API, the openai API is queried and results are then 
 ## Future Development
 
 I plan to continue to build on this going forwards. The features I would like to add include: 
-    - Exporting the training plan
-    - A new page for diet plans
-    - An exercise tracker
+- Exporting the training plan
+- A new page for diet plans
+- An exercise tracker
+- Add local storage 
 
