@@ -80,6 +80,7 @@ export default function TrainingProgramForm({
         type="reset"
         onClick={() => {
           setTrainingDays("");
+          setSessionTime("");
           setTrainingProgram(null);
           localStorage.removeItem("training_program");
         }}
