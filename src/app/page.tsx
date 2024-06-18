@@ -1,4 +1,4 @@
-import TrainingProgramContainer from "./components/TrainingProgramContainer";
+import TrainingProgramContainer from "../components/TrainingProgramContainer";
 
 export default function Home() {
   return (

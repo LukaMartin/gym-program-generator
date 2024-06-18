@@ -6,7 +6,9 @@ export default function useGetTrainingProgram(
   sessionTime: string,
   trainingGoal: string
 ) {
-  const [trainingProgram, setTrainingProgram] = useState<TTrainingProgram[] | null>(null);
+  const [trainingProgram, setTrainingProgram] = useState<
+    TTrainingProgram[] | null
+  >(null);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -44,7 +46,10 @@ export default function useGetTrainingProgram(
 
     setTrainingProgram(jsonData.training_program);
     setIsLoading(false);
-    localStorage.setItem("training_program", JSON.stringify(jsonData.training_program));
+    localStorage.setItem(
+      "training_program",
+      JSON.stringify(jsonData.training_program)
+    );
   };
 
   return { trainingProgram, setTrainingProgram, isLoading, getTrainingProgram };

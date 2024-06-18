@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import { TExerciseInstructions } from "../lib/types";
 
 export default function useGetExerciseInstructions(searchText: string) {
-  const [exerciseInstructions, setExerciseInstructions] = useState<TExerciseInstructions[] | null>(null);
+  const [exerciseInstructions, setExerciseInstructions] = useState<
+    TExerciseInstructions[] | null
+  >(null);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -40,7 +42,10 @@ export default function useGetExerciseInstructions(searchText: string) {
 
     setExerciseInstructions(jsonData.instructions);
     setIsLoading(false);
-    localStorage.setItem("exercise_instructions", JSON.stringify(jsonData.instructions));
+    localStorage.setItem(
+      "exercise_instructions",
+      JSON.stringify(jsonData.instructions)
+    );
   };
 
   return {
