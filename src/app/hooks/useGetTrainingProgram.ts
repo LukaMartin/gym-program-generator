@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TTrainingProgram } from "../lib/types";
 
 export default function useGetTrainingProgram(
@@ -8,6 +8,16 @@ export default function useGetTrainingProgram(
 ) {
   const [trainingProgram, setTrainingProgram] = useState<TTrainingProgram[] | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedTrainingProgram = localStorage.getItem("training_program");
+      if (storedTrainingProgram) {
+        const program = JSON.parse(storedTrainingProgram);
+        setTrainingProgram(program);
+      }
+    }
+  }, []);
 
   const getTrainingProgram = async () => {
     if (!trainingDays || !sessionTime || !trainingGoal) {
@@ -31,8 +41,10 @@ export default function useGetTrainingProgram(
     const data = await response.json();
 
     const jsonData = JSON.parse(data.data);
+
     setTrainingProgram(jsonData.training_program);
     setIsLoading(false);
+    localStorage.setItem("training_program", JSON.stringify(jsonData.training_program));
   };
 
   return { trainingProgram, setTrainingProgram, isLoading, getTrainingProgram };

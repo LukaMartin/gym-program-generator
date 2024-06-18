@@ -51,9 +51,10 @@ export default function TrainingProgramForm({
         className="rounded-lg outline-none ring-light-red focus:ring-2 text-black mt-2 mb-4 px-1 py-[0.125rem] md:px-2 md:py-1"
         id="training-goal"
         name="training-goal"
+        defaultValue={""}
         required
       >
-        <option value="" disabled selected>
+        <option value="" disabled>
           Choose your goal
         </option>
         <option value="muscle growth">Muscle Growth</option>
@@ -80,6 +81,7 @@ export default function TrainingProgramForm({
         onClick={() => {
           setTrainingDays("");
           setTrainingProgram(null);
+          localStorage.removeItem("training_program");
         }}
       >
         Clear

@@ -37,6 +37,7 @@ export default function ExerciseInstrctionsForm({
         onClick={() => {
           setSearchText("");
           setExerciseInstructions(null);
+          localStorage.removeItem("exercise_instructions");
         }}
       >
         Clear
