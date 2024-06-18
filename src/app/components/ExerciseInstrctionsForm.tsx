@@ -22,7 +22,7 @@ export default function ExerciseInstrctionsForm({
       <button
         type="submit"
         className={clsx(
-          "md:text-xl mt-2 p-1 border-2 border-white rounded-lg hover:bg-blue",
+          "md:text-xl mt-2 p-1 border-2 border-white rounded-lg hover:bg-blue active:animate-shrinkOnClick",
           {
             "bg-blue": isLoading,
             "bg-navy": !isLoading,
@@ -33,7 +33,7 @@ export default function ExerciseInstrctionsForm({
       </button>
       <button
         type="button"
-        className="md:text-xl mt-2 p-1 border-2 border-white rounded-lg hover:bg-blue"
+        className="md:text-xl mt-2 p-1 border-2 border-white rounded-lg hover:bg-blue active:animate-shrinkOnClick"
         onClick={() => {
           setSearchText("");
           setExerciseInstructions(null);

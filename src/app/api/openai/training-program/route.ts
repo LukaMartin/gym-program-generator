@@ -8,13 +8,17 @@ const openai = new OpenAI({
 export const runtime = "edge";
 
 export async function POST(res: Request) {
-  const { trainingDays, trainingGoal } = await res.json();
+  const { trainingDays, sessionTime, trainingGoal } = await res.json();
 
   const response = await openai.chat.completions.create({
     messages: [
       {
         role: "user",
-        content: `Provide valid JSON output. I would please like some help making a gym program. I would like to go to the gym ${trainingDays} days a week. My goal is ${trainingGoal}. Please use the following structure for the data.`
+        content: `Provide valid JSON output. I would please like some help making a gym program. I would like to go to the gym ${trainingDays} days a week. My goal is ${trainingGoal}. I can train for ${sessionTime} minutes per session.`
+      },
+      {
+        role: "user",
+        content: "Please use the following structure for the data."
       },
       {
         role: "user",

@@ -7,9 +7,10 @@ import TrainingProgramTable from "./TrainingProgramTable";
 
 export default function TrainingProgramContainer() {
   const [trainingDays, setTrainingDays] = useState("");
+  const [sessionTime, setSessionTime] = useState("");
   const [goalOption, setGoalOption] = useState("");
   const { getTrainingProgram, isLoading, trainingProgram, setTrainingProgram } =
-    useGetTrainingProgram(trainingDays, goalOption);
+    useGetTrainingProgram(trainingDays, sessionTime, goalOption);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -22,6 +23,8 @@ export default function TrainingProgramContainer() {
       <TrainingProgramForm
         trainingDays={trainingDays}
         setTrainingDays={setTrainingDays}
+        sessionTime={sessionTime}
+        setSessionTime={setSessionTime}
         setGoalOption={setGoalOption}
         setTrainingProgram={setTrainingProgram}
         handleSubmit={handleSubmit}

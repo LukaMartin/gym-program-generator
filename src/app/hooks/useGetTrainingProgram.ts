@@ -3,13 +3,14 @@ import { TTrainingProgram } from "../lib/types";
 
 export default function useGetTrainingProgram(
   trainingDays: string,
+  sessionTime: string,
   trainingGoal: string
 ) {
   const [trainingProgram, setTrainingProgram] = useState<TTrainingProgram[] | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const getTrainingProgram = async () => {
-    if (!trainingDays || !trainingGoal) {
+    if (!trainingDays || !sessionTime || !trainingGoal) {
       return;
     }
 
@@ -22,6 +23,7 @@ export default function useGetTrainingProgram(
       },
       body: JSON.stringify({
         trainingDays: trainingDays,
+        sessionTime: sessionTime,
         trainingGoal: trainingGoal,
       }),
     });

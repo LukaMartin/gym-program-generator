@@ -1,6 +1,8 @@
 export type TrainingProgramFormProps = {
   trainingDays: string;
   setTrainingDays: (day: string) => void;
+  sessionTime: string;
+  setSessionTime: (time: string) => void;
   setGoalOption: (goal: string) => void;
   setTrainingProgram: (program: TTrainingProgram[] | null) => void;
   handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;

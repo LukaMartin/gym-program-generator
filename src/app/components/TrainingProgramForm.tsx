@@ -4,6 +4,8 @@ import { clsx } from "clsx";
 export default function TrainingProgramForm({
   trainingDays,
   setTrainingDays,
+  sessionTime,
+  setSessionTime,
   setGoalOption,
   setTrainingProgram,
   handleSubmit,
@@ -22,8 +24,23 @@ export default function TrainingProgramForm({
         id="days-per-week"
         name="days-per-week"
         maxLength={1}
-        pattern="[1-7]"
+        pattern="[1-7]+"
         title="Choose a number between 1 and 7."
+        required
+      />
+      <label className="md:text-xl text-center" htmlFor="session-time">
+        Time per session (mins)
+      </label>
+      <input
+        onChange={(e) => setSessionTime(e.target.value)}
+        value={sessionTime}
+        className="rounded-lg outline-none ring-light-red focus:ring-2 text-black mt-2 mb-4 px-1 md:px-2 md:py-[0.125rem]"
+        type="text"
+        id="session-time"
+        name="session-time"
+        maxLength={3}
+        pattern="[0-9]+"
+        title="Only enter numbers."
         required
       />
       <label className="md:text-xl text-center" htmlFor="training-goal">
@@ -47,7 +64,7 @@ export default function TrainingProgramForm({
       </select>
       <button
         className={clsx(
-          "md:text-xl mt-2 p-1 border-2 border-white rounded-lg hover:bg-blue",
+          "md:text-xl mt-2 p-1 border-2 border-white rounded-lg hover:bg-blue active:animate-shrinkOnClick",
           {
             "bg-blue": isLoading,
             "bg-navy": !isLoading,
@@ -58,7 +75,7 @@ export default function TrainingProgramForm({
         Submit
       </button>
       <button
-        className="md:text-xl mt-2 p-1 border-2 border-white rounded-lg hover:bg-blue"
+        className="md:text-xl mt-2 p-1 border-2 border-white rounded-lg hover:bg-blue active:animate-shrinkOnClick"
         type="reset"
         onClick={() => {
           setTrainingDays("");
