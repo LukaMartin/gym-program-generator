@@ -13,15 +13,6 @@ const config: Config = {
         "blue": "#30407F",
         "light-red": "#f76c6c"
       },
-      keyframes: {
-        shrinkOnClick: {
-          "0%": { transform: "scale(1)", opacaity: "1" },
-          "100%": { transform: "scale(0.9)", opactiy: "1" },
-        }
-      },
-      animation: {
-        shrinkOnClick: "shrinkOnClick 0.2s 1 forwards",
-      },
     },
   },
   plugins: [],

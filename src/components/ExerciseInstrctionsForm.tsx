@@ -11,7 +11,7 @@ export default function ExerciseInstrctionsForm({
   return (
     <form onSubmit={handleSubmit} className="flex flex-col">
       <input
-        className="rounded-lg outline-none ring-light-red focus:ring-2 text-black mt-2 mb-4 px-1 md:px-2 py-1"
+        className="rounded-lg outline-none ring-light-red focus:ring-2 text-black border-2 border-light-red mt-2 mb-4 px-1 md:px-2 py-1"
         type="text"
         placeholder="Exercise name..."
         name="search-text"
@@ -22,7 +22,7 @@ export default function ExerciseInstrctionsForm({
       <button
         type="submit"
         className={clsx(
-          "md:text-xl mt-2 p-1 border-2 border-white rounded-lg hover:bg-blue active:animate-shrinkOnClick",
+          "md:text-xl mt-2 p-1 border-2 border-white rounded-lg hover:bg-blue button-effects",
           {
             "bg-blue": isLoading,
             "bg-navy": !isLoading,
@@ -33,7 +33,7 @@ export default function ExerciseInstrctionsForm({
       </button>
       <button
         type="button"
-        className="md:text-xl mt-2 p-1 border-2 border-white rounded-lg hover:bg-blue active:animate-shrinkOnClick"
+        className="md:text-xl mt-2 p-1 border-2 border-white rounded-lg hover:bg-blue button-effects"
         onClick={() => {
           setSearchText("");
           setExerciseInstructions(null);
