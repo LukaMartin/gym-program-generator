@@ -19,13 +19,14 @@ export default function TrainingProgramForm({
       <input
         onChange={(e) => setTrainingDays(e.target.value)}
         value={trainingDays}
-        className="rounded-lg outline-none ring-light-red focus:ring-2 text-black border-2 border-light-red mt-2 mb-4 px-1 md:px-2 md:py-[0.125rem]"
+        className="rounded-lg outline-none ring-white focus:ring-2 bg-white/5 border-2 border-white/20 mt-2 mb-4 px-1 md:px-2 md:py-[0.125rem]"
         type="text"
         id="days-per-week"
         name="days-per-week"
         maxLength={1}
         pattern="[1-7]+"
         title="Choose a number between 1 and 7."
+        autoComplete="off"
         required
       />
       <label className="md:text-xl text-center" htmlFor="session-time">
@@ -34,13 +35,14 @@ export default function TrainingProgramForm({
       <input
         onChange={(e) => setSessionTime(e.target.value)}
         value={sessionTime}
-        className="rounded-lg outline-none ring-light-red focus:ring-2 text-black border-2 border-light-red mt-2 mb-4 px-1 md:px-2 md:py-[0.125rem]"
+        className="rounded-lg outline-none ring-white focus:ring-2 bg-white/5 border-2 border-white/20 mt-2 mb-4 px-1 md:px-2 md:py-[0.125rem]"
         type="text"
         id="session-time"
         name="session-time"
         maxLength={3}
         pattern="[0-9]+"
         title="Only enter numbers."
+        autoComplete="off"
         required
       />
       <label className="md:text-xl text-center" htmlFor="training-goal">
@@ -48,7 +50,7 @@ export default function TrainingProgramForm({
       </label>
       <select
         onChange={(e) => setGoalOption(e.target.value)}
-        className="rounded-lg outline-none ring-light-red focus:ring-2 text-black border-2 border-light-red mt-2 mb-4 px-1 py-[0.125rem] md:px-2 md:py-1"
+        className="rounded-lg outline-none ring-white focus:ring-2 bg-white/5 border-2 border-white/20 mt-2 mb-4 px-1 py-[0.125rem] md:px-2 md:py-1"
         id="training-goal"
         name="training-goal"
         defaultValue={""}
@@ -57,11 +59,11 @@ export default function TrainingProgramForm({
         <option value="" disabled>
           Choose your goal
         </option>
-        <option value="muscle growth">Muscle Growth</option>
-        <option value="increase strength">Increase Strength</option>
-        <option value="HIIT">Cardiovascular Fitness</option>
-        <option value="improved flexibility">Improved Flexibility</option>
-        <option value="calisthenics training">Calisthenics Training</option>
+        <option value="muscle growth" className="text-black">Muscle Growth</option>
+        <option value="increase strength" className="text-black">Increase Strength</option>
+        <option value="HIIT" className="text-black">Cardiovascular Fitness</option>
+        <option value="improved flexibility" className="text-black">Improved Flexibility</option>
+        <option value="calisthenics training" className="text-black">Calisthenics Training</option>
       </select>
       <button
         className={clsx(

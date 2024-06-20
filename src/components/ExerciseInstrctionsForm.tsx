@@ -11,12 +11,13 @@ export default function ExerciseInstrctionsForm({
   return (
     <form onSubmit={handleSubmit} className="flex flex-col">
       <input
-        className="rounded-lg outline-none ring-light-red focus:ring-2 text-black border-2 border-light-red mt-2 mb-4 px-1 md:px-2 py-1"
+        className="rounded-lg outline-none ring-white focus:ring-2 bg-white/5 border-2 border-white/20 mt-2 mb-4 px-1 md:px-2 py-1"
         type="text"
         placeholder="Exercise name..."
         name="search-text"
         value={searchText}
         onChange={(e) => setSearchText(e.target.value)}
+        autoComplete="off"
         required
       />
       <button
