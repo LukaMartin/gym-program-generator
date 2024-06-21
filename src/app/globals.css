@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .button-effects {
-  @apply hover:scale-105 active:scale-[1.02] transition;
+  @apply active:scale-[0.95] transition;
 }
 
 .down-arrow {
