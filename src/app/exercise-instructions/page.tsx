@@ -6,7 +6,7 @@ export default function ExerciseExamples() {
       <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold pb-6">
         Exercise Instructions
       </h1>
-      <p className="pb-6 px-4 text-center text-base">
+      <p className="pb-6 px-4 text-center text-base text-white/75 italic">
         Use the input below to get detailed instructions on the exercises in
         your training program
       </p>

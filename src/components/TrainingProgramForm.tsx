@@ -1,5 +1,11 @@
+import { Poppins } from "next/font/google";
 import { TrainingProgramFormProps } from "../lib/types";
 import { clsx } from "clsx";
+
+const poppins = Poppins({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export default function TrainingProgramForm({
   trainingDays,
@@ -12,83 +18,98 @@ export default function TrainingProgramForm({
   isLoading,
 }: TrainingProgramFormProps) {
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col">
-      <label className="md:text-xl text-center" htmlFor="days-per-week">
-        Training days per week
-      </label>
-      <input
-        onChange={(e) => setTrainingDays(e.target.value)}
-        value={trainingDays}
-        className="rounded-lg outline-none ring-white focus:ring-2 bg-white/5 border-2 border-white/20 mt-2 mb-4 px-1 md:px-2 md:py-[0.125rem]"
-        type="text"
-        id="days-per-week"
-        name="days-per-week"
-        maxLength={1}
-        pattern="[1-7]+"
-        title="Choose a number between 1 and 7."
-        autoComplete="off"
-        required
-      />
-      <label className="md:text-xl text-center" htmlFor="session-time">
-        Time per session (mins)
-      </label>
-      <input
-        onChange={(e) => setSessionTime(e.target.value)}
-        value={sessionTime}
-        className="rounded-lg outline-none ring-white focus:ring-2 bg-white/5 border-2 border-white/20 mt-2 mb-4 px-1 md:px-2 md:py-[0.125rem]"
-        type="text"
-        id="session-time"
-        name="session-time"
-        maxLength={3}
-        pattern="[0-9]+"
-        title="Only enter numbers."
-        autoComplete="off"
-        required
-      />
-      <label className="md:text-xl text-center" htmlFor="training-goal">
-        Training Goal
-      </label>
-      <select
-        onChange={(e) => setGoalOption(e.target.value)}
-        className="rounded-lg outline-none ring-white focus:ring-2 bg-white/5 border-2 border-white/20 mt-2 mb-4 px-1 py-[0.125rem] md:px-2 md:py-1"
-        id="training-goal"
-        name="training-goal"
-        defaultValue={""}
-        required
-      >
-        <option value="" disabled>
-          Choose your goal
-        </option>
-        <option value="muscle growth" className="text-black">Muscle Growth</option>
-        <option value="increase strength" className="text-black">Increase Strength</option>
-        <option value="HIIT" className="text-black">Cardiovascular Fitness</option>
-        <option value="improved flexibility" className="text-black">Improved Flexibility</option>
-        <option value="calisthenics training" className="text-black">Calisthenics Training</option>
-      </select>
-      <button
-        className={clsx(
-          "md:text-xl mt-2 p-1 border-2 border-white rounded-lg hover:bg-blue button-effects",
-          {
-            "bg-blue": isLoading,
-            "bg-navy": !isLoading,
-          }
-        )}
-        type="submit"
-      >
-        Submit
-      </button>
-      <button
-        className="md:text-xl mt-2 p-1 border-2 border-white rounded-lg hover:bg-blue button-effects"
-        type="reset"
-        onClick={() => {
-          setTrainingDays("");
-          setSessionTime("");
-          setTrainingProgram(null);
-          localStorage.removeItem("training_program");
-        }}
-      >
-        Clear
-      </button>
-    </form>
+    <section className={`${poppins.className} flex flex-col mt-20 bg-white text-black rounded-xl`}>
+      <div className="bg-light-red h-16 md:h-20 rounded-t-xl"></div>
+      <form onSubmit={handleSubmit} className="flex flex-col py-4 px-6 xs:px-8">
+        <label className="font-semibold md:text-xl" htmlFor="days-per-week">
+          Sessions
+        </label>
+        <input
+          onChange={(e) => setTrainingDays(e.target.value)}
+          value={trainingDays}
+          className="w-60 md:w-72 outline-none ring-navy focus:ring-2 border-2 border-black/20 mt-2 mb-8 px-1 md:px-2 md:py-[0.25rem]"
+          type="text"
+          id="days-per-week"
+          name="days-per-week"
+          maxLength={1}
+          pattern="[1-7]+"
+          title="Choose a number between 1 and 7."
+          placeholder="No. of sessions per week..."
+          autoComplete="off"
+          required
+        />
+        <label className="font-semibold md:text-xl" htmlFor="session-time">
+          Time
+        </label>
+        <input
+          onChange={(e) => setSessionTime(e.target.value)}
+          value={sessionTime}
+          className="w-60 md:w-72 outline-none ring-navy focus:ring-2 border-2 border-black/20 mt-2 mb-8 px-1 md:px-2 md:py-[0.25rem]"
+          type="text"
+          id="session-time"
+          name="session-time"
+          maxLength={3}
+          pattern="[0-9]+"
+          title="Only enter numbers."
+          placeholder="Time per session (mins)..."
+          autoComplete="off"
+          required
+        />
+        <label className="font-semibold md:text-xl" htmlFor="training-goal">
+          Goal
+        </label>
+        <select
+          onChange={(e) => setGoalOption(e.target.value)}
+          className="w-60 md:w-72 outline-none ring-navy focus:ring-2 border-2 border-black/20 mt-2 mb-8 px-1 py-[0.125rem] md:px-2 md:py-1"
+          id="training-goal"
+          name="training-goal"
+          defaultValue={""}
+          required
+        >
+          <option value="" disabled>
+            Choose your goal
+          </option>
+          <option value="muscle growth" className="text-black">
+            Muscle Growth
+          </option>
+          <option value="increase strength" className="text-black">
+            Increase Strength
+          </option>
+          <option value="HIIT" className="text-black">
+            Cardiovascular Fitness
+          </option>
+          <option value="improved flexibility" className="text-black">
+            Improved Flexibility
+          </option>
+          <option value="calisthenics training" className="text-black">
+            Calisthenics Training
+          </option>
+        </select>
+        <button
+          className={clsx(
+            "text-white md:text-xl p-1 hover:bg-blue button-effects",
+            {
+              "bg-blue": isLoading,
+              "bg-navy": !isLoading,
+            }
+          )}
+          type="submit"
+        >
+          Submit
+        </button>
+        <button
+          className="text-white bg-light-red md:text-xl mt-2 mb-6 p-1 hover:bg-[#F58080] button-effects"
+          type="reset"
+          onClick={() => {
+            setTrainingDays("");
+            setSessionTime("");
+            setTrainingProgram(null);
+            localStorage.removeItem("training_program");
+          }}
+        >
+          Clear
+        </button>
+      </form>
+    </section>
   );
 }

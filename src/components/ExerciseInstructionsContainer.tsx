@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ExerciseInstrctionsForm from "./ExerciseInstrctionsForm";
 import useGetExerciseInstructions from "../hooks/useGetExerciseInstructrions";
 import LoadingBar from "./LoadingBar";

@@ -32,7 +32,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="h-20 px-4 md:px-8 mb-40 border-b border-white/20 ">
+      <header className="h-20 px-4 md:px-8 mb-20 border-b border-white/20 ">
         <nav className="h-full hidden md:flex justify-between items-center">
           <h2
             className={`${poppins.className} text-light-red text-2xl lg:text-3xl font-bold`}
