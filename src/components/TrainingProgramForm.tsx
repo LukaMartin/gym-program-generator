@@ -1,6 +1,8 @@
 import { TrainingProgramFormProps } from "../lib/types";
 import { clsx } from "clsx";
 
+const inputStyles = "appearance-none w-60 md:w-72 outline-none rounded-sm ring-navy focus:ring-2 border-2 border-black/20 mt-2 mb-8 pl-2 py-[0.25rem]"
+
 export default function TrainingProgramForm({
   trainingDays,
   setTrainingDays,
@@ -21,7 +23,7 @@ export default function TrainingProgramForm({
         <input
           onChange={(e) => setTrainingDays(e.target.value)}
           value={trainingDays}
-          className="appearance-none w-60 md:w-72 outline-none rounded-sm ring-navy focus:ring-2 border-2 border-black/20 mt-2 mb-8 pl-2 py-[0.25rem]"
+          className={inputStyles}
           type="text"
           id="days-per-week"
           name="days-per-week"
@@ -38,7 +40,7 @@ export default function TrainingProgramForm({
         <input
           onChange={(e) => setSessionTime(e.target.value)}
           value={sessionTime}
-          className="appearance-none w-60 md:w-72 outline-none rounded-sm ring-navy focus:ring-2 border-2 border-black/20 mt-2 mb-8 pl-2 py-[0.25rem]"
+          className={inputStyles}
           type="text"
           id="session-time"
           name="session-time"
@@ -81,7 +83,7 @@ export default function TrainingProgramForm({
         </select>
         <button
           className={clsx(
-            "text-white md:text-xl p-1 rounded-sm hover:bg-blue button-effects",
+            "text-white md:text-xl p-1 rounded-sm transition hover:bg-blue button-effects",
             {
               "bg-blue": isLoading,
               "bg-navy": !isLoading,
@@ -92,7 +94,7 @@ export default function TrainingProgramForm({
           Submit
         </button>
         <button
-          className="text-white bg-light-red md:text-xl mt-2 mb-6 p-1 rounded-sm hover:bg-[#F58080] button-effects"
+          className="text-white bg-light-red md:text-xl mt-2 mb-6 p-1 rounded-sm transition hover:bg-[#F58080] button-effects"
           type="reset"
           onClick={() => {
             setTrainingDays("");

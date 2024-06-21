@@ -34,12 +34,13 @@ export default function Header() {
     <>
       <header className="h-20 px-4 md:px-8 mb-20 border-b border-white/20 ">
         <nav className="h-full hidden md:flex justify-between items-center">
-          <h2
-            className={`${poppins.className} text-light-red text-2xl lg:text-3xl font-bold`}
-          >
-            GYM PROGRAM GEN
-          </h2>
-
+          <Link href="/">
+            <h2
+              className={`${poppins.className} text-light-red text-2xl lg:text-3xl font-bold`}
+            >
+              GYM PROGRAM GEN
+            </h2>
+          </Link>
           <ul className="flex gap-x-4 md:gap-x-8 h-full">
             {routes.map((route) => {
               return (
@@ -68,11 +69,13 @@ export default function Header() {
         </nav>
 
         <div className="h-full flex md:hidden items-center justify-between">
-          <h2
-            className={`${poppins.className} text-light-red text-xl font-bold`}
-          >
-            GYM PROGRAM GEN
-          </h2>
+          <Link href="/">
+            <h2
+              className={`${poppins.className} text-light-red text-xl font-bold`}
+            >
+              GYM PROGRAM GEN
+            </h2>
+          </Link>
           {toggleMenu && (
             <IoMenu size={30} onClick={() => setToggleMenu(!toggleMenu)} />
           )}
@@ -86,9 +89,11 @@ export default function Header() {
           }
         >
           <div className="h-20 flex md:hidden items-center justify-between px-4 border-b border-white/20">
-            <h2 className={`${poppins.className} text-xl font-bold`}>
-              GYM PROGRAM GEN
-            </h2>
+            <Link href="/">
+              <h2 className={`${poppins.className} text-xl font-bold`}>
+                GYM PROGRAM GEN
+              </h2>
+            </Link>
             {!toggleMenu && (
               <IoClose size={30} onClick={() => setToggleMenu(!toggleMenu)} />
             )}
