@@ -6,7 +6,7 @@ export default function ExerciseExamples() {
     <main className="flex flex-col items-center">
       <H1 className="text-2xl">Exercise Instructions</H1>
       <p className="mb-20 px-4 text-center text-base text-white/75 italic">
-        Use the input below to get detailed instructions on the exercises in
+        Use the search below to get detailed instructions on the exercises in
         your training program
       </p>
 

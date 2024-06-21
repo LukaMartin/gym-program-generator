@@ -8,7 +8,7 @@ export default function Home() {
         CREATE YOUR TRAINING PROGRAM
       </H1>
       <p className="max-w-[70%] md:max-w-full text-center text-sm md:text-base italic text-white/75">
-        Fill the form below to create your training program
+        Complete the form below to create your training program
       </p>
 
       <TrainingProgramContainer />

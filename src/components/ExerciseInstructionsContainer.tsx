@@ -10,7 +10,6 @@ export default function ExerciseInstructionsContainer() {
   const [searchText, setSearchText] = useState("");
   const {
     exerciseInstructions,
-    setExerciseInstructions,
     isLoading,
     getTrainingProgram,
   } = useGetExerciseInstructions(searchText);
@@ -24,11 +23,9 @@ export default function ExerciseInstructionsContainer() {
   return (
     <>
       <ExerciseInstrctionsForm
-        isLoading={isLoading}
         searchText={searchText}
         setSearchText={setSearchText}
         handleSubmit={handleSubmit}
-        setExerciseInstructions={setExerciseInstructions}
       />
 
       {isLoading ? (

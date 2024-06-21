@@ -25,11 +25,9 @@ export type TrainingTableProps = {
 };
 
 export type ExerciseInstructionsFormProps = {
-  isLoading: boolean;
   searchText: string;
   setSearchText: (exercise: string) => void;
   handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
-  setExerciseInstructions: (instructions: TExerciseInstructions[] | null) => void;
 };
 
 export type TExerciseInstructions = {
