@@ -8,11 +8,8 @@ import ExerciseInstructionsResponse from "./ExerciseInstructionsResponse";
 
 export default function ExerciseInstructionsContainer() {
   const [searchText, setSearchText] = useState("");
-  const {
-    exerciseInstructions,
-    isLoading,
-    getTrainingProgram,
-  } = useGetExerciseInstructions(searchText);
+  const { exerciseInstructions, isLoading, getTrainingProgram } =
+    useGetExerciseInstructions(searchText);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

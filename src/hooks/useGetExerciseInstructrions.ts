@@ -7,7 +7,6 @@ export default function useGetExerciseInstructions(searchText: string) {
   >(null);
   const [isLoading, setIsLoading] = useState(false);
 
-
   const getTrainingProgram = async () => {
     if (!searchText) {
       return;
