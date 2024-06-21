@@ -60,28 +60,28 @@ export default function TrainingProgramForm({
         </label>
         <select
           onChange={(e) => setGoalOption(e.target.value)}
-          className="appearance-none w-60 md:w-72 outline-none ring-navy focus:ring-2 border-2 border-black/20 mt-2 mb-8 px-1 py-[0.125rem] md:px-2 md:py-1"
+          className="bg-gray-50 border-2 border-black/20 text-gray-900  ring-navy focus:ring-2 focus:border-blue-500 block mt-2 mb-8 px-1 md:px-2 py-[0.25rem]"
           id="training-goal"
           name="training-goal"
           defaultValue={""}
           required
         >
-          <option value="" disabled>
+          <option value="" className="flex justify-between" disabled>
             Choose your goal
           </option>
-          <option value="muscle growth" className="text-black">
+          <option value="muscle growth">
             Muscle Growth
           </option>
-          <option value="increase strength" className="text-black">
+          <option value="increase strength">
             Increase Strength
           </option>
-          <option value="HIIT" className="text-black">
+          <option value="HIIT">
             Cardiovascular Fitness
           </option>
-          <option value="improved flexibility" className="text-black">
+          <option value="improved flexibility">
             Improved Flexibility
           </option>
-          <option value="calisthenics training" className="text-black">
+          <option value="calisthenics training">
             Calisthenics Training
           </option>
         </select>
