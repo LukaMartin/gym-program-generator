@@ -20,14 +20,14 @@ export default function TrainingProgramForm({
   return (
     <section className={`${poppins.className} flex flex-col mt-20 bg-white text-black rounded-xl`}>
       <div className="bg-light-red h-16 md:h-20 rounded-t-xl"></div>
-      <form onSubmit={handleSubmit} className="flex flex-col py-4 px-6 xs:px-8">
+      <form onSubmit={handleSubmit} className="flex flex-col py-4 px-6 md:px-8">
         <label className="font-semibold md:text-xl" htmlFor="days-per-week">
           Sessions
         </label>
         <input
           onChange={(e) => setTrainingDays(e.target.value)}
           value={trainingDays}
-          className="w-60 md:w-72 outline-none ring-navy focus:ring-2 border-2 border-black/20 mt-2 mb-8 px-1 md:px-2 md:py-[0.25rem]"
+          className="w-60 md:w-72 outline-none ring-navy focus:ring-2 border-2 border-black/20 mt-2 mb-8 px-1 md:px-2 py-[0.25rem] appearance-none"
           type="text"
           id="days-per-week"
           name="days-per-week"
@@ -44,7 +44,7 @@ export default function TrainingProgramForm({
         <input
           onChange={(e) => setSessionTime(e.target.value)}
           value={sessionTime}
-          className="w-60 md:w-72 outline-none ring-navy focus:ring-2 border-2 border-black/20 mt-2 mb-8 px-1 md:px-2 md:py-[0.25rem]"
+          className="w-60 md:w-72 outline-none ring-navy focus:ring-2 border-2 border-black/20 mt-2 mb-8 px-1 md:px-2 py-[0.25rem]"
           type="text"
           id="session-time"
           name="session-time"
