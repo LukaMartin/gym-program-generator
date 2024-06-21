@@ -1,11 +1,5 @@
-import { Poppins } from "next/font/google";
 import { TrainingProgramFormProps } from "../lib/types";
 import { clsx } from "clsx";
-
-const poppins = Poppins({
-  weight: "400",
-  subsets: ["latin"],
-});
 
 export default function TrainingProgramForm({
   trainingDays,
@@ -18,7 +12,7 @@ export default function TrainingProgramForm({
   isLoading,
 }: TrainingProgramFormProps) {
   return (
-    <section className={`${poppins.className} flex flex-col mt-20 bg-white text-black rounded-xl`}>
+    <section className={`flex flex-col mt-20 bg-white text-black rounded-xl`}>
       <div className="bg-light-red h-16 md:h-20 rounded-t-xl"></div>
       <form onSubmit={handleSubmit} className="flex flex-col py-4 px-6 md:px-8">
         <label className="font-semibold text-xl" htmlFor="days-per-week">
