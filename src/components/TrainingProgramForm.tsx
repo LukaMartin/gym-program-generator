@@ -44,7 +44,7 @@ export default function TrainingProgramForm({
         <input
           onChange={(e) => setSessionTime(e.target.value)}
           value={sessionTime}
-          className="w-60 md:w-72 outline-none ring-navy focus:ring-2 border-2 border-black/20 mt-2 mb-8 px-1 md:px-2 py-[0.25rem]"
+          className="appearance-none w-60 md:w-72 outline-none ring-navy focus:ring-2 border-2 border-black/20 mt-2 mb-8 px-1 md:px-2 py-[0.25rem]"
           type="text"
           id="session-time"
           name="session-time"
@@ -60,7 +60,7 @@ export default function TrainingProgramForm({
         </label>
         <select
           onChange={(e) => setGoalOption(e.target.value)}
-          className="w-60 md:w-72 outline-none ring-navy focus:ring-2 border-2 border-black/20 mt-2 mb-8 px-1 py-[0.125rem] md:px-2 md:py-1"
+          className="appearance-none w-60 md:w-72 outline-none ring-navy focus:ring-2 border-2 border-black/20 mt-2 mb-8 px-1 py-[0.125rem] md:px-2 md:py-1"
           id="training-goal"
           name="training-goal"
           defaultValue={""}
