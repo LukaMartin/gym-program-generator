@@ -83,10 +83,10 @@ export default function TrainingProgramForm({
         </select>
         <button
           className={clsx(
-            "text-white text-lg md:text-xl py-2 rounded-md hover:bg-blue transition active:scale-[0.95]",
+            "text-white text-lg md:text-xl py-2 rounded-md transition active:scale-[0.95]",
             {
-              "bg-blue": isLoading,
-              "bg-navy": !isLoading,
+              "bg-gray-500": isLoading,
+              "bg-navy hover:bg-blue": !isLoading,
             }
           )}
           type="submit"
