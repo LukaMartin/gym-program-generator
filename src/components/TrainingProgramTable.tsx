@@ -1,5 +1,5 @@
 import { TrainingTableProps } from "../lib/types";
-import LoadingBar from "./LoadingBar";
+import TrainingProgramTableSkeleton from "./TrainingProgramTableSkeleton";
 
 export default function TrainingProgramTable({
   trainingProgram,
@@ -8,7 +8,7 @@ export default function TrainingProgramTable({
   return (
     <>
       {isLoading ? (
-        <LoadingBar />
+        <TrainingProgramTableSkeleton />
       ) : (
         <section className="my-20">
           <table className="bg-blue border-2 border-white text-sm md:text-base">

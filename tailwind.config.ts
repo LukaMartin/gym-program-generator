@@ -20,7 +20,18 @@ const config: Config = {
         'lg': '1024px',
         'xl': '1280px',
         '2xl': '1536px',
-      }
+      },
+      keyframes: {
+        pulseStrong: {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.3" },
+        },
+      },
+      animation: {
+        pulseSlow: "pulseStrong 1.3s infinite",
+        pulseRegular: "pulseStrong 1s infinite",
+        pulseFast: "pulseStrong 0.7s infinite",
+      },
     },
   },
   plugins: [],
