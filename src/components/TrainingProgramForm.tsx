@@ -83,7 +83,7 @@ export default function TrainingProgramForm({
         </select>
         <button
           className={clsx(
-            "text-white md:text-xl p-1 rounded-md hover:bg-blue transition active:scale-[0.95]",
+            "text-white text-lg md:text-xl py-2 rounded-md hover:bg-blue transition active:scale-[0.95]",
             {
               "bg-blue": isLoading,
               "bg-navy": !isLoading,
@@ -94,7 +94,7 @@ export default function TrainingProgramForm({
           {isLoading ? "Generating program..." : "Submit"}
         </button>
         <button
-          className="text-white bg-light-red md:text-xl mt-2 mb-6 p-1 rounded-md hover:bg-[#F58080] transition active:scale-[0.95]"
+          className="text-white bg-light-red text-lg md:text-xl mt-2 mb-6 py-2 rounded-md hover:bg-[#F58080] transition active:scale-[0.95]"
           type="reset"
           onClick={() => {
             setTrainingDays("");
