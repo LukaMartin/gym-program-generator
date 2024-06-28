@@ -1,6 +1,6 @@
 import Skeleton from "./Skeleton";
 
-export default function TrainingProgramTableSkeleton() {
+export default function SkeletonCard() {
   return (
     <section className="flex flex-col my-20">
         <Skeleton className="animate-pulseSlow"/>
