@@ -91,7 +91,7 @@ export default function TrainingProgramForm({
           )}
           type="submit"
         >
-          Submit
+          {isLoading ? "Generating program..." : "Submit"}
         </button>
         <button
           className="text-white bg-light-red md:text-xl mt-2 mb-6 p-1 rounded-md hover:bg-[#F58080] transition active:scale-[0.95]"
