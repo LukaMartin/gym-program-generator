@@ -6,7 +6,7 @@ export default function LoadingBar() {
       <BarLoader
         color="#f76c6c"
         height={6}
-        width={350}
+        width={300}
         aria-label="Loading Bar" 
       />
     </div>

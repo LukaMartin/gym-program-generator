@@ -14,9 +14,9 @@ export default function TrainingProgramForm({
   isLoading,
 }: TrainingProgramFormProps) {
   return (
-    <section className={`flex flex-col mt-20 bg-[#dcdde2] text-black rounded-xl`}>
+    <section className={`flex flex-col mt-20 bg-[#e1e2e6] text-black rounded-xl`}>
       <div className="bg-light-red h-16 md:h-20 rounded-t-xl"></div>
-      <form onSubmit={handleSubmit} className="flex flex-col py-4 px-6 md:px-8">
+      <form onSubmit={handleSubmit} className="flex flex-col py-4 px-8 xs:px-10">
         <label className="font-semibold text-xl" htmlFor="days-per-week">
           Sessions
         </label>
