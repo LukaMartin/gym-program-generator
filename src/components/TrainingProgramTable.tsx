@@ -1,5 +1,5 @@
 import { TrainingTableProps } from "../lib/types";
-import SkeletonCard from "./SkeletonCard";
+import TrainingProgramSkeletonCard from "./TrainingProgramSkeletonCard";
 
 export default function TrainingProgramTable({
   trainingProgram,
@@ -8,7 +8,7 @@ export default function TrainingProgramTable({
   return (
     <>
       {isLoading ? (
-        <SkeletonCard />
+        <TrainingProgramSkeletonCard />
       ) : (
         <section className="my-20">
           <table className="bg-blue border-2 border-white text-sm md:text-base">

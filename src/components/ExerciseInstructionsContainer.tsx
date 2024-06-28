@@ -4,7 +4,6 @@ import { useState } from "react";
 import ExerciseInstrctionsForm from "./ExerciseInstrctionsForm";
 import useGetExerciseInstructions from "../hooks/useGetExerciseInstructrions";
 import ExerciseInstructionsResponse from "./ExerciseInstructionsResponse";
-import SkeletonCard from "./SkeletonCard";
 
 export default function ExerciseInstructionsContainer() {
   const [searchText, setSearchText] = useState("");
@@ -26,7 +25,7 @@ export default function ExerciseInstructionsContainer() {
       />
 
       {isLoading ? (
-        <SkeletonCard />
+        <p className="text-white/40 italic pt-4">Loading instructions...</p>
       ) : (
         <ExerciseInstructionsResponse
           exerciseInstructions={exerciseInstructions}
