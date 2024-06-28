@@ -1,7 +1,8 @@
 import { TrainingProgramFormProps } from "../lib/types";
 import { clsx } from "clsx";
 
-const inputStyles = "appearance-none w-60 md:w-72 outline-none rounded-md ring-gray-400 focus:ring-2 mt-2 mb-8 pl-2 py-[0.5rem]"
+const inputStyles =
+  "appearance-none w-60 md:w-72 outline-none rounded-md ring-gray-400 focus:ring-2 mt-2 mb-8 pl-2 py-[0.5rem]";
 
 export default function TrainingProgramForm({
   trainingDays,
@@ -14,9 +15,14 @@ export default function TrainingProgramForm({
   isLoading,
 }: TrainingProgramFormProps) {
   return (
-    <section className={`flex flex-col mt-20 bg-[#e1e2e6] text-black rounded-xl`}>
+    <section
+      className={`flex flex-col mt-20 bg-[#e1e2e6] text-black rounded-xl`}
+    >
       <div className="bg-light-red h-16 md:h-20 rounded-t-xl"></div>
-      <form onSubmit={handleSubmit} className="flex flex-col py-4 px-8 md:px-10">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col py-4 px-8 md:px-10"
+      >
         <label className="font-semibold text-xl" htmlFor="days-per-week">
           Sessions
         </label>
@@ -65,21 +71,11 @@ export default function TrainingProgramForm({
           <option value="" disabled>
             Choose your goal...
           </option>
-          <option value="muscle growth">
-            Muscle Growth
-          </option>
-          <option value="increase strength">
-            Increase Strength
-          </option>
-          <option value="HIIT">
-            Cardiovascular Fitness
-          </option>
-          <option value="improved flexibility">
-            Improved Flexibility
-          </option>
-          <option value="calisthenics training">
-            Calisthenics Training
-          </option>
+          <option value="muscle growth">Muscle Growth</option>
+          <option value="increase strength">Increase Strength</option>
+          <option value="HIIT">Cardiovascular Fitness</option>
+          <option value="improved flexibility">Improved Flexibility</option>
+          <option value="calisthenics training">Calisthenics Training</option>
         </select>
         <button
           className={clsx(

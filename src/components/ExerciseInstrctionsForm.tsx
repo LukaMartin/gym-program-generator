@@ -1,6 +1,5 @@
 import { ExerciseInstructionsFormProps } from "../lib/types";
 
-
 export default function ExerciseInstrctionsForm({
   searchText,
   setSearchText,
